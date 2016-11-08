@@ -38,6 +38,9 @@ class MenuViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.estimatedRowHeight = 64
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
        
@@ -47,8 +50,8 @@ class MenuViewController: UIViewController {
         let mentionsNavigationController = storyboard.instantiateViewController(withIdentifier: "MentionsNavigationController") as! UINavigationController
         
         // Append view controllers
-        viewControllers.append(profileNavigationController)
         viewControllers.append(homeNavigationController)
+        viewControllers.append(profileNavigationController)
         viewControllers.append(mentionsNavigationController)
         
         // Set the default

@@ -45,7 +45,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TM2-hU-dXZ"/>
-                                    <segue destination="Gvw-0X-r3r" kind="show" id="flj-3Q-W5g"/>
+                                    <segue destination="Gvw-0X-r3r" kind="show" identifier="loginSegue" id="flj-3Q-W5g"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,7 +76,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O2Y-gD-wdw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O2Y-gD-wdw" customClass="TweetsView" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -227,7 +227,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="O2Y-gD-wdw" id="SLR-nV-gC2"/>
+                        <outlet property="tableView" destination="O2Y-gD-wdw" id="G1Y-ym-4ty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibF-Gw-ESP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -250,15 +250,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" textLabel="jbV-FT-QT5" rowHeight="75" style="IBUITableViewCellStyleDefault" id="lF5-tj-j3u" customClass="MenuViewCell" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" textLabel="jbV-FT-QT5" rowHeight="64" style="IBUITableViewCellStyleDefault" id="lF5-tj-j3u" customClass="MenuViewCell" customModule="Twitter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lF5-tj-j3u" id="XKq-VK-o54">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jbV-FT-QT5">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="74.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="63"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -301,7 +301,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ow-Ok-P3x">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ow-Ok-P3x" customClass="TweetsView" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -451,6 +451,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="6ow-Ok-P3x" id="pwc-S1-oPJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfQ-IH-ndI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,7 +616,7 @@
                                     <constraint firstAttribute="width" constant="375" id="eC0-rf-nAo"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kmt-ch-Mzf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kmt-ch-Mzf" customClass="TweetsView" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="320" width="375" height="347"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -776,6 +779,7 @@
                         <outlet property="friendsCountLabel" destination="0xv-S1-sB2" id="ry2-Yb-y9t"/>
                         <outlet property="headerImageView" destination="sPL-Bt-xB5" id="pBE-DP-cvz"/>
                         <outlet property="statusesCountLabel" destination="JiS-Ig-Htg" id="z0g-zq-qBs"/>
+                        <outlet property="tableView" destination="Kmt-ch-Mzf" id="RVu-0v-m7k"/>
                         <outlet property="tagLine" destination="bae-IA-owK" id="4GV-N7-YTg"/>
                     </connections>
                 </viewController>
